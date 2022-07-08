@@ -13,4 +13,15 @@ class ProductCreateForm(forms.ModelForm):
     class Meta: 
         model = Products 
         fields = ['title', 'sku', 'description', 'varients', 'price', 'stock', 'photo']
-        
+
+
+class ProductUpdateForm(forms.ModelForm):
+    class Meta: 
+        model = Products 
+        fields = ['title', 'sku', 'description', 'varients', 'price', 'stock', 'photo']
+
+
+class productSearchForm(forms.ModelForm):
+    class Meta:
+        model = Products 
+        fields = ['title', 'varients']
