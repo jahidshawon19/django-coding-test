@@ -27,7 +27,7 @@ class Products(models.Model):
     title = models.CharField(max_length=150)
     sku = models.CharField(max_length=150)
     description = models.TextField()
-    varients = models.ManyToManyField(ProductVarients)
+    varients = models.ForeignKey(ProductVarients, on_delete=models.SET_NULL, null=True, default='') 
     price = models.FloatField()
     stock = models.IntegerField()
     photo = models.ForeignKey(ProductImage, on_delete=models.SET_NULL, null=True, default='') 

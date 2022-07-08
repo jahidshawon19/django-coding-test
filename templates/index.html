@@ -1,0 +1,45 @@
+{% include 'header.html' %}
+{% include 'navbar.html' %}
+
+
+<section class="py-3 mt-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Varient</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">In Stock</th>
+                        <th scope="col">Action</th>
+
+                      </tr>
+                    </thead>
+                    <tbody>
+
+                        {% for prod in products %}
+                      <tr>
+                        <th scope="row">{{forloop.counter}}</th>
+                        <td>{{prod.title}}</td>
+                        <td>{{prod.description}}</td>
+                        <td>{{prod.varients}}</td>
+                        <td> Price {{prod.price}}</td>
+                        <td>{{prod.stock}}</td>
+                        <td><a href="#" class="btn btn-success btn-sm">Edit</a> || <a href="#" class="btn btn-danger btn-sm">Delete</a></td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+{% include 'footer.html' %}
